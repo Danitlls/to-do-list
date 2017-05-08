@@ -1,0 +1,12 @@
+#show-task {
+  display: none;
+}
+
+.tarea {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.tarea:hover {
+  text-decoration: underline;
+}
