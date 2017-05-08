@@ -9,7 +9,7 @@ Task.prototype.makeTask = function () {
   return this.task;
 };
 
-
+var arrayObjects = [];
 
 $(document).ready(function(){
   $("form#new-task").submit(function(event){
@@ -31,25 +31,24 @@ $(document).ready(function(){
     // Display Output, displaying var newTask Object, aplying the Method "makeTask"?:
   $("ul#task-list").append("<li><span class='tarea'>" + newTask.makeTask() + "</span></li>");
 
+
   // <button type='button' name='Done'></button>
 //<button type='button' name='Done' class='remove1'>Delete</button>
 
   $(".tarea").last().click(function() {
-    $("#show-task").show();
-    $("#show-task h2").text(newTask.task);
+    $("#show-task").toggle();
+    $("#show-task h2").text(newTask);
     $(".when").text(newTask.when);
     $(".description1").text(newTask.description1);
 
   });
 
-  // $(".remove1").click(function(){
-  //
-  //   $("li").parent.remove();
-  //   $(".extra").detach(); //deletes the details about the task.
-  //   console.log("hellloooooo");
-  // });
-  // $(".remove").onclick(function(){
+  $(".remove1").click(function(){
 
+  });
+  // $(".remove").onclick(function(){
+  arrayObjects.push(newTask.task);
+  console.log(arrayObjects);
 
     $("#new-task-name").val("");
     $("#new-when").val("");
